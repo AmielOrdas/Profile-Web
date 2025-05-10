@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
+import { Provider } from "react-redux";
+import store from "@/lib/redux/store"; // Adjust this path based on your structure
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const JetBrainsFont = JetBrains_Mono({
+  subsets: ["cyrillic"],
+  weight: "400",
+  variable: "--font-JetBrainsMono",
 });
 
 export const metadata: Metadata = {
@@ -24,11 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <Provider store={store}>
+        <body className={`${JetBrainsFont.variable}`}>{children}</body>
+      </Provider>
     </html>
   );
 }
