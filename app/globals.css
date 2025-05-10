@@ -33,6 +33,14 @@
   }
 }
 
+.gradient-border-left {
+  border-image: linear-gradient(to left, #ef4444, #8b5cf6, #3b82f6) 1;
+}
+
+.gradient-border-right {
+  border-image: linear-gradient(to right, #ef4444, #8b5cf6, #3b82f6) 1;
+}
+
 .gradient-animation-horizontal {
   background: linear-gradient(to right, #ef4444, #8b5cf6, #3b82f6);
   background-size: 200% 200%;
@@ -45,13 +53,13 @@
   animation: gradientSlideY 4s linear infinite;
 }
 
-.bg-custom-gradient {
-  background-image: linear-gradient(to right, #ef4444, #8b5cf6, #3b82f6);
+/* Gradient for horizontal line */
+.gradient-line-horizontal-to-right {
+  background: linear-gradient(to right, #ef4444, #8b5cf6, #3b82f6);
 }
 
-/* Gradient for horizontal line */
-.gradient-line-horizontal {
-  background: linear-gradient(to right, #ef4444, #8b5cf6, #3b82f6);
+.gradient-line-horizontal-to-left {
+  background: linear-gradient(to left, #ef4444, #8b5cf6, #3b82f6);
 }
 
 /* Gradient for vertical divider */

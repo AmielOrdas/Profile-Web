@@ -1,5 +1,3 @@
-"use client";
-
 import { Globe, Mail } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 

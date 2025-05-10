@@ -1,12 +1,14 @@
-import Card from "@/components/Card";
-import Card1 from "@/components/Card1";
+import Card from "@/components/Project Card/Card";
+
 import ProfileCard from "@/components/Profile Card/ProfileCard";
-import Image from "next/image";
+
+import NavigationArea from "@/components/Navigation/NavigationArea";
 
 export default function Home() {
   return (
-    <>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-grayCustom space-y-10">
+    <div className="bg-grayCustom">
+      <NavigationArea />
+      <div className="flex flex-col items-center justify-center min-h-screen space-y-10 mt-10">
         <Card
           title="Purple Project"
           frontend={["React", "TailwindCSS"]}
@@ -25,6 +27,6 @@ export default function Home() {
         />
         <ProfileCard />
       </div>
-    </>
+    </div>
   );
 }

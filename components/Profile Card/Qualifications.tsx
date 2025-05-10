@@ -1,4 +1,3 @@
-"use client";
 import { GraduationCapIcon, NotebookPen } from "lucide-react";
 
 export default function Qualifications() {

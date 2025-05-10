@@ -1,9 +1,17 @@
-"use client";
-
 import { showQualifications, showSkills, showLinksAndContacts } from "@/lib/redux/slice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import clsx from "clsx"; // import clsx for conditional class names
+import { RootState } from "@/lib/redux/store";
 export default function Navbar() {
   const dispatch = useDispatch();
+  // Select states from Redux
+  const qualificationsVisible = useSelector(
+    (state: RootState) => state.qualifications.isVisible
+  );
+  const skillsVisible = useSelector((state: RootState) => state.skills.isVisible);
+  const linksAndContactsVisible = useSelector(
+    (state: RootState) => state.linksAndContacts.isVisible
+  );
 
   function handleClickQualifications() {
     dispatch(showQualifications(true));
@@ -26,30 +34,47 @@ export default function Navbar() {
   return (
     <div className="relative w-full mb-4">
       {/* Horizontal line */}
-      <div className="w-full h-[1px] gradient-line-horizontal"></div>
+      <div className="w-full h-[1px] gradient-line-horizontal-to-right"></div>
 
       {/* Container for text and dividers */}
       <div className="flex justify-center items-center text-xs font-jetbrains font-semibold text-black relative ">
         {/* Left side text */}
         <div className="flex-1 text-right">
           <p
-            className="mr-3 hover:text-orangeCustom75 
-            hover:underline"
+            className={clsx(
+              "mr-3 cursor-pointer hover:text-orangeCustom75  hover:underline",
+              qualificationsVisible ? "text-orangeCustom100 underline" : ""
+            )}
+            onClick={handleClickQualifications}
           >
             Qualifications
           </p>
         </div>
         {/* Vertical divider */}
-        <div className="w-[1px] h-8 gradient-line-vertical"></div>
+        <div className="w-[0.5px] h-8 gradient-line-vertical"></div>
         {/* Right side text */}
         <div className="text-center">
-          <p className="px-2 hover:text-orangeCustom75 hover:underline">Skills</p>
+          <p
+            className={clsx(
+              "px-2 cursor-pointer hover:text-orangeCustom75  hover:underline",
+              skillsVisible ? "text-orangeCustom100 underline" : ""
+            )}
+            onClick={handleClickSkills}
+          >
+            Skills
+          </p>
         </div>
         {/* Vertical divider */}
-        <div className="w-[1px] h-8 gradient-line-vertical"></div>
+        <div className="w-[0.5px] h-8 gradient-line-vertical"></div>
         {/* Right side text */}
         <div className="flex-1 text-left">
-          <p className="ml-2 text-left hover:text-orangeCustom75 hover:underline">
+          <p
+            className={clsx(
+              "ml-2 cursor-pointer hover:text-orangeCustom75 hover:underline",
+              linksAndContactsVisible ? "text-orangeCustom100 underline" : ""
+            )}
+            onClick={handleClickLinksAndContacts}
+          >
             Links & Contacts
           </p>
         </div>

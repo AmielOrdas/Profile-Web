@@ -6,22 +6,33 @@ import LinksAndContacts from "./LinksAndContacts";
 import Navbar from "./Navbar";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/store";
+import { AnimatePresence } from "framer-motion";
+
+import { SlideLeftRightAnimation, RotateAnimation } from "../wrappers/Animation";
+
+import Logo from "@/public/MyLogo.png";
+import Image from "next/image";
 
 export function ProfileCard() {
-  const showQualifications = useSelector(
+  const qualificationsVisible = useSelector(
     (state: RootState) => state.qualifications.isVisible
   );
-  const showSkills = useSelector((state: RootState) => state.skills.isVisible);
-  const showLinksAndContacts = useSelector(
+  const skillsVisible = useSelector((state: RootState) => state.skills.isVisible);
+  const LinksAndContactsVisible = useSelector(
     (state: RootState) => state.linksAndContacts.isVisible
   );
 
   return (
-    <div className="bg-white rounded-3xl shadow-lg overflow-hidden max-w-sm mx-auto mt-8">
+    <div className="bg-white rounded-3xl shadow-lg overflow-visible max-w-sm min-h-[470px] mx-auto relative">
       {/* Top Orange Section */}
-      <div className="bg-orangeCustom75 h-30">
+      <div className="bg-orangeCustom75 h-30 rounded-t-3xl">
         {/* Plus Icon (Placeholder) */}
-        <div className="absolute text-black text-xl">+</div>
+
+        <div className="absolute top-[-20px] right-[-30px] ">
+          <RotateAnimation>
+            <Image src={Logo} alt="Logo" width={70} className="object-contain" />
+          </RotateAnimation>
+        </div>
       </div>
 
       {/* Profile Image (Placeholder) */}
@@ -44,9 +55,23 @@ export function ProfileCard() {
       </div>
 
       <Navbar />
-      {showQualifications && <Qualifications />}
-      {showSkills && <Skills />}
-      {showLinksAndContacts && <LinksAndContacts />}
+      <AnimatePresence mode="wait">
+        {qualificationsVisible && (
+          <SlideLeftRightAnimation key="qualifications">
+            <Qualifications />
+          </SlideLeftRightAnimation>
+        )}
+        {skillsVisible && (
+          <SlideLeftRightAnimation key="skills">
+            <Skills />
+          </SlideLeftRightAnimation>
+        )}
+        {LinksAndContactsVisible && (
+          <SlideLeftRightAnimation key="LinksAndContacts">
+            <LinksAndContacts />
+          </SlideLeftRightAnimation>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
