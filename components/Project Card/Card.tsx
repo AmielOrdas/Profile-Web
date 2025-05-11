@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import CircleNavigation from "../AboutMeCard/CircleNavigation";
 
 interface IconLink {
   icon: React.ReactNode;
@@ -12,6 +13,7 @@ interface ProjectCardProps {
   backend?: string[];
   database?: string[];
   utilities?: string[];
+  interests?: string[];
   emoji?: string | ReactNode;
   link?: string;
   icons?: IconLink[];
@@ -31,6 +33,7 @@ export default function CardTemplate(props: ProjectCardProps) {
     backend = [],
     database = [],
     utilities = [],
+    interests = [],
     emoji = "🚀",
     link = "#",
     icons = [],
@@ -92,6 +95,8 @@ export default function CardTemplate(props: ProjectCardProps) {
           {renderTechGroup("Backend", backend)}
           {renderTechGroup("Database", database)}
           {renderTechGroup("Utilities", utilities)}
+          {renderTechGroup("Interests", interests)}
+          {}
           {link && (
             <a
               href={link}

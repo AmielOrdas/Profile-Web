@@ -7,36 +7,33 @@ import Achievements from "./Achievements";
 
 export default function BracketCard() {
   return (
-    <div className="bg-black ">
-      <div className="absolute top-[61%] left-0 w-full flex items-center justify-between pointer-events-none">
-        {/* Left Line - Orange */}
-        <div className="h-[1px] bg-orange-500 w-[calc(50%-140px)] gradient-line-horizontal-to-right" />
-
-        {/* Right Line - Red */}
-        <div className="h-[1px] bg-red-700 w-[calc(50%-140px)] gradient-line-horizontal-to-right" />
+    <div className="bg-black relative min-h-screen">
+      {/* Horizontal Line - Orange (Left Side) */}
+      <div className="absolute top-1/2 left-0 right-1/2 transform -translate-y-1/2 pointer-events-none">
+        <div className="h-[1px] bg-orange-500 w-full gradient-line-horizontal-to-right" />
       </div>
 
-      {/* Centered content with brackets */}
+      {/* Horizontal Line - Red (Right Side) */}
+      <div className="absolute top-1/2 left-1/2 right-0 transform -translate-y-1/2 pointer-events-none">
+        <div className="h-[1px] bg-red-700 w-full gradient-line-horizontal-to-right" />
+      </div>
+
+      {/* Centered Bracket Content */}
       <div className="flex items-center justify-center min-h-screen">
         <div className="flex flex-col justify-center items-center relative px-7 mx-auto w-fit bg-black">
-          <div className="absolute top-[-50px] left-1/2 transform -translate-x-1/2">
-            <Image src={Logo} alt="Logo" width={50} />
+          <div className="absolute top-[-100px] left-1/2 transform -translate-x-1/2">
+            <Image src={Logo} alt="Logo" width={100} />
           </div>
 
-          {/* Top Bracket */}
-          <div className="w-100 h-10 border-l border-r border-t gradient-border-left mb-[-10px]">
+          <div className="w-170 h-10 border-l border-r border-t gradient-border-left mb-[-10px]">
             <Achievements />
           </div>
 
-          {/* Top bracket + nav container */}
-
-          {/* Content */}
-          <div className="text-center text-white text-3xl px-2 font-[1000]">
+          <div className="text-center text-white text-6xl px-2 font-[1000]">
             Amiel Mir O. Ordas
           </div>
 
-          {/* Bottom Bracket */}
-          <div className="w-100 h-10 border-l border-r border-b gradient-border-left mt-[-10px]" />
+          <div className="w-170 h-10 border-l border-r border-b gradient-border-left mt-[-10px]" />
         </div>
       </div>
     </div>

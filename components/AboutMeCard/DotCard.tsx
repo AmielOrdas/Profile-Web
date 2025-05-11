@@ -1,8 +1,9 @@
-import DotCard from "@/components/AboutMeCard/DotCard";
-import DotCard1 from "@/components/DotCard1";
-import BracketCard from "@/components/Navigation/BracketCard";
-import ProfileCard from "@/components/Profile Card/ProfileCard";
-
+"use client";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Card from "../Project Card/Card";
+import CircleNavigation from "./CircleNavigation";
+import { CardFlip } from "../wrappers/Animation";
 const cardsData = [
   {
     title: "Interested in learning",
@@ -50,21 +51,30 @@ const cardsData = [
   },
 ];
 
-export default function Home() {
-  return (
-    <>
-      <div className="min-h-screen ">
-        <BracketCard />
-      </div>
-      <div className="bg-grayCustom  text-center py-5">
-        <h1 className="font-jetbrains text-white text-3xl">Hey there!</h1>
-        <ProfileCard />
-      </div>
-      <div className="bg-grayCustom flex flex-col items-center py-20 pb-40">
-        <h1 className="font-jetbrains text-white text-3xl">About me</h1>
+export default function DynamicCardDisplay() {
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
-        <DotCard1 cardsData={cardsData} />
+  function handleDotClick(index: number) {
+    if (index === currentCardIndex) return;
+
+    setCurrentCardIndex(index);
+  }
+
+  return (
+    <div className="flex flex-col items-center justify-center ">
+      <div className="relative w-full h-full">
+        <CardFlip currentCardIndex={currentCardIndex}>
+          <Card {...cardsData[currentCardIndex]} />
+        </CardFlip>
       </div>
-    </>
+
+      <div className="mt-4">
+        <CircleNavigation
+          total={cardsData.length}
+          currentIndex={currentCardIndex}
+          onDotClick={handleDotClick}
+        />
+      </div>
+    </div>
   );
 }

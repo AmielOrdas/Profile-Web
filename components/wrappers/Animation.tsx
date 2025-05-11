@@ -1,5 +1,5 @@
 // Animations.tsx
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 // Slide Left/Right Animation
 export function SlideLeftRightAnimation({ children }: { children: React.ReactNode }) {
@@ -38,5 +38,32 @@ export function RotateAnimation({
     >
       {children}
     </motion.div>
+  );
+}
+
+export function CardFlip({
+  children,
+  currentCardIndex,
+}: {
+  children: React.ReactNode;
+  currentCardIndex: number;
+}) {
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={currentCardIndex}
+        initial={{ rotateY: 90 }}
+        animate={{ rotateY: 0 }}
+        exit={{ rotateY: -90 }}
+        transition={{ duration: 0.3 }}
+        className="w-full"
+        style={{
+          perspective: 1000,
+          transformStyle: "preserve-3d",
+        }}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 }
