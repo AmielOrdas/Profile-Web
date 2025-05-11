@@ -1,7 +1,7 @@
 export default function Achievements() {
   return (
     <div className="w-full">
-      <div className="flex justify-center items-start text-[7px] font-semibold text-white h-3 relative">
+      <div className="flex justify-center items-start text-[5px] font-semibold text-white h-3 relative">
         {/* Left text */}
         <div className="flex-1 text-right mr-2 mt-0.5">
           <p className="cursor-pointer hover:text-orangeCustom75 hover:underline">

@@ -4,7 +4,7 @@ import Projects from "./Navlinks/Projects";
 import Thesis from "./Navlinks/Thesis";
 export default function NavigationText() {
   return (
-    <div className=" w-full  flex flex-col items-center bg-red-600">
+    <div className="relative w-full mb-4 flex flex-col items-center">
       {/* Horizontal line */}
 
       {/* Items with vertical line attached to horizontal line */}
@@ -14,6 +14,10 @@ export default function NavigationText() {
         <Projects />
         <Home />
         <Thesis />
+        {/* Navigation Text FIXED at the same spot as the bottom bracket */}
+        <div className="fixed top-[calc(65%+40px)] left-1/2 transform -translate-x-1/2 z-50">
+          <NavigationText />
+        </div>
       </div>
     </div>
   );

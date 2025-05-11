@@ -1,10 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-// Shared type for section state
-type TSectionState = {
-  isVisible: boolean;
-};
-
 // Qualifications slice
 const qualificationsSlice = createSlice({
   name: "qualifications",
@@ -21,7 +16,7 @@ const skillsSlice = createSlice({
   name: "skills",
   initialState: { isVisible: false },
   reducers: {
-    showSkills(state: TSectionState, actions: PayloadAction<boolean>) {
+    showSkills(state, actions: PayloadAction<boolean>) {
       state.isVisible = actions.payload;
     },
   },
@@ -32,8 +27,41 @@ const linksAndContactsSlice = createSlice({
   name: "linksAndContacts",
   initialState: { isVisible: false },
   reducers: {
-    showLinksAndContacts(state: TSectionState, actions: PayloadAction<boolean>) {
+    showLinksAndContacts(state, actions: PayloadAction<boolean>) {
       state.isVisible = actions.payload;
+    },
+  },
+});
+
+const HomeSlice = createSlice({
+  name: "Home",
+  initialState: { isVisible: true },
+  reducers: {
+    showHome(state, actions: PayloadAction<boolean>) {
+      state.isVisible = actions.payload;
+    },
+  },
+});
+
+const thesisSlice = createSlice({
+  name: "Thesis",
+  initialState: { isVisible: false },
+  reducers: {
+    showThesis(state, actions: PayloadAction<boolean>) {
+      state.isVisible = actions.payload;
+    },
+  },
+});
+
+const projectsSlice = createSlice({
+  name: "projects",
+  initialState: { isVisible: false, nextJSVisible: false },
+  reducers: {
+    showProjects(state, actions: PayloadAction<boolean>) {
+      state.isVisible = actions.payload;
+    },
+    showNextJS(state, actions: PayloadAction<boolean>) {
+      state.nextJSVisible = actions.payload;
     },
   },
 });
@@ -42,10 +70,16 @@ const linksAndContactsSlice = createSlice({
 export const { showQualifications } = qualificationsSlice.actions;
 export const { showSkills } = skillsSlice.actions;
 export const { showLinksAndContacts } = linksAndContactsSlice.actions;
+export const { showHome } = HomeSlice.actions;
+export const { showThesis } = thesisSlice.actions;
+export const { showProjects, showNextJS } = projectsSlice.actions;
 
 // Combine reducers
 export const rootReducer = {
   qualifications: qualificationsSlice.reducer,
   skills: skillsSlice.reducer,
   linksAndContacts: linksAndContactsSlice.reducer,
+  home: HomeSlice.reducer,
+  thesis: thesisSlice.reducer,
+  projects: projectsSlice.reducer,
 };

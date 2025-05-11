@@ -1,10 +1,11 @@
 import { showQualifications, showSkills, showLinksAndContacts } from "@/lib/redux/slice";
 import { useDispatch, useSelector } from "react-redux";
-import clsx from "clsx"; // import clsx for conditional class names
+import clsx from "clsx";
 import { RootState } from "@/lib/redux/store";
+
 export default function Navbar() {
   const dispatch = useDispatch();
-  // Select states from Redux
+
   const qualificationsVisible = useSelector(
     (state: RootState) => state.qualifications.isVisible
   );
@@ -32,17 +33,23 @@ export default function Navbar() {
   }
 
   return (
-    <div className="relative w-full mb-4">
+    <div className="relative w-full mb-4 flex flex-col items-center">
       {/* Horizontal line */}
-      <div className="w-full h-[1px] gradient-line-horizontal-to-right"></div>
+      <div className="w-full h-[1px] gradient-line-horizontal-to-right mb-1 relative z-0" />
 
-      {/* Container for text and dividers */}
-      <div className="flex justify-center items-center text-xs font-jetbrains font-semibold text-black relative ">
-        {/* Left side text */}
-        <div className="flex-1 text-right">
+      {/* Items with vertical line attached to horizontal line */}
+      <div className="flex justify-center gap-8 text-xs font-jetbrains font-semibold text-black mt-[-5px]">
+        {/* Qualifications */}
+        <div className="flex flex-col items-center group">
+          <div
+            className={clsx(
+              "w-[1px] h-4 bg-black mb-1 transition-opacity duration-200 gradient-line-vertical",
+              qualificationsVisible ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+            )}
+          />
           <p
             className={clsx(
-              "mr-3 cursor-pointer hover:text-orangeCustom75  hover:underline",
+              "cursor-pointer hover:text-orangeCustom75 hover:underline",
               qualificationsVisible ? "text-orangeCustom100 underline" : ""
             )}
             onClick={handleClickQualifications}
@@ -50,13 +57,18 @@ export default function Navbar() {
             Qualifications
           </p>
         </div>
-        {/* Vertical divider */}
-        <div className="w-[0.5px] h-8 gradient-line-vertical"></div>
-        {/* Right side text */}
-        <div className="text-center">
+
+        {/* Skills */}
+        <div className="flex flex-col items-center group">
+          <div
+            className={clsx(
+              "w-[1px] h-4 bg-black mb-1 transition-opacity duration-200 gradient-line-vertical",
+              skillsVisible ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+            )}
+          />
           <p
             className={clsx(
-              "px-2 cursor-pointer hover:text-orangeCustom75  hover:underline",
+              "cursor-pointer hover:text-orangeCustom75 hover:underline ",
               skillsVisible ? "text-orangeCustom100 underline" : ""
             )}
             onClick={handleClickSkills}
@@ -64,13 +76,20 @@ export default function Navbar() {
             Skills
           </p>
         </div>
-        {/* Vertical divider */}
-        <div className="w-[0.5px] h-8 gradient-line-vertical"></div>
-        {/* Right side text */}
-        <div className="flex-1 text-left">
+
+        {/* Links & Contacts */}
+        <div className="flex flex-col items-center group">
+          <div
+            className={clsx(
+              "w-[1px] h-4 bg-black mb-1 transition-opacity duration-200 gradient-line-vertical",
+              linksAndContactsVisible
+                ? "opacity-100"
+                : "opacity-0 group-hover:opacity-100"
+            )}
+          />
           <p
             className={clsx(
-              "ml-2 cursor-pointer hover:text-orangeCustom75 hover:underline",
+              "cursor-pointer hover:text-orangeCustom75 hover:underline",
               linksAndContactsVisible ? "text-orangeCustom100 underline" : ""
             )}
             onClick={handleClickLinksAndContacts}
