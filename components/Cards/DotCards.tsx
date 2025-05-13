@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Card from "../Project Card/Card";
+import Card from "./Card";
 import CircleNavigation from "./CircleNavigation";
 import { CardFlip } from "../wrappers/Animation";
 
@@ -17,11 +17,11 @@ interface CardData {
   link?: string;
 }
 
-interface DynamicCardDisplayProps {
+interface DotCardsProps {
   cardsData?: CardData[];
 }
 
-export default function DynamicCardDisplay(props: DynamicCardDisplayProps) {
+export default function DotCards(props: DotCardsProps) {
   const { cardsData = [] } = props;
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 

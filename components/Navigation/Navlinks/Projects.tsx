@@ -20,11 +20,11 @@ export default function Projects() {
   }
 
   return (
-    <div className="flex flex-col items-center group/project">
+    <div className="flex flex-col items-center group/project relative">
       {/* Vertical line - shows on hover or if clicked */}
       <div
         className={clsx(
-          "w-[1px] h-4 bg-white mb-1 mx-auto transition-opacity duration-500 gradient-line-vertical",
+          "w-[1px] h-2 bg-white mb-1 mx-auto transition-opacity duration-500 gradient-line-vertical",
           projectsVisible
             ? "opacity-100 "
             : "opacity-0 group-hover/project:opacity-100 group-hover/project:gradient-line-vertical"
@@ -45,7 +45,7 @@ export default function Projects() {
         {/* Sub-navigation: only shows when hovered */}
         <div
           className={clsx(
-            "flex flex-col items-center font-jetbrains text-[10px] w-16 pl-2 transition-opacity duration-500 opacity-0 group-hover/project:opacity-100"
+            "absolute top-full mt-1 max-h-40 overflow-y-auto   text-white  font-jetbrains text-[10px] transition-opacity duration-500 opacity-0 group-hover/project:opacity-100 z-50 bg-transparent"
           )}
         >
           <div

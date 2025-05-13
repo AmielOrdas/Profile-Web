@@ -4,6 +4,7 @@ import Image from "next/image";
 import Logo from "@/public/MyLogo.png";
 
 import Achievements from "./Achievements";
+import Icon from "../Icon";
 
 export default function BracketCard() {
   return (
@@ -21,8 +22,8 @@ export default function BracketCard() {
       {/* Centered Bracket Content */}
       <div className="flex items-center justify-center min-h-screen">
         <div className="flex flex-col justify-center items-center relative px-7 mx-auto w-fit bg-black">
-          <div className="absolute top-[-100px] left-1/2 transform -translate-x-1/2">
-            <Image src={Logo} alt="Logo" width={100} />
+          <div className="absolute top-[-105px] left-1/2 transform -translate-x-1/2">
+            <Icon rotate={false} size={100} />
           </div>
 
           <div className="w-170 h-10 border-l border-r border-t gradient-border-left mb-[-10px]">

@@ -9,7 +9,7 @@ export default function NavigationArea() {
       <h1 className="text-xs font-jetbrains font-semibold text-white ml-10">
         Amiel Mir O. Ordas
       </h1>
-      <div className="flex justify-center gap-10 text-xs font-jetbrains font-semibold text-white">
+      <div className="flex justify-center  gap-10 text-xs font-jetbrains font-semibold text-white">
         <Projects />
         <Home />
         <Thesis />

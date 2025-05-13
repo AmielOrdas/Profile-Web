@@ -1,5 +1,4 @@
-import DotCard from "@/components/AboutMeCard/DotCard";
-import DotCard1 from "@/components/DotCard1";
+import DotCards from "@/components/Cards/DotCards";
 import BracketCard from "@/components/Navigation/BracketCard";
 import ProfileCard from "@/components/Profile Card/ProfileCard";
 
@@ -63,7 +62,7 @@ export default function Home() {
       <div className="bg-grayCustom flex flex-col items-center py-20 pb-40">
         <h1 className="font-jetbrains text-white text-3xl">About me</h1>
 
-        <DotCard1 cardsData={cardsData} />
+        <DotCards cardsData={cardsData} />
       </div>
     </>
   );

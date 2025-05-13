@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${JetBrainsFont.variable} pt-13 `}>
+      <body className={`${JetBrainsFont.variable}  `}>
         <ReduxProvider>
           <NavigationArea />
           {children}
