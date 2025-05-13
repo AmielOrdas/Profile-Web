@@ -35,7 +35,7 @@ const linksAndContactsSlice = createSlice({
 
 const HomeSlice = createSlice({
   name: "Home",
-  initialState: { isVisible: true },
+  initialState: { isVisible: false },
   reducers: {
     showHome(state, actions: PayloadAction<boolean>) {
       state.isVisible = actions.payload;

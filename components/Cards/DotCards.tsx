@@ -7,7 +7,7 @@ import { CardFlip } from "../wrappers/Animation";
 interface CardData {
   title?: string;
   description?: string;
-  emoji?: string;
+  emoji?: string | React.ReactNode[] | React.ReactNode;
   interests?: string[];
   bgBase?: string;
   bgBadge?: string;

@@ -1,13 +1,19 @@
 import DotCards from "@/components/Cards/DotCards";
 import BracketCard from "@/components/Navigation/BracketCard";
 import ProfileCard from "@/components/Profile Card/ProfileCard";
-
+import { PiStudentBold } from "react-icons/pi";
+import { TbMathIntegral } from "react-icons/tb";
+import { TbMatrix } from "react-icons/tb";
+import { TbMathAvg } from "react-icons/tb";
+import { TbLogicAnd } from "react-icons/tb";
+import { FaCode } from "react-icons/fa6";
+import { GiArtificialIntelligence } from "react-icons/gi";
 const cardsData = [
   {
     title: "Interested in learning",
     description:
       "I am interested in learning things that makes me think.  Mathematics and programming mostly sparks my curiosity. Some topics outside mathematics and programming sparks my curiosity as well.",
-    emoji: "🚀",
+    emoji: <PiStudentBold size={50} />,
     interests: ["Mathematics", "Computers"],
     bgBase: "bg-red-100",
     bgBadge: "bg-red-200",
@@ -20,7 +26,11 @@ const cardsData = [
     title: "Interested in mathematics",
     description:
       "I am interested in math topics related to circuits, computers, and physics.",
-    emoji: "📱",
+    emoji: [
+      <TbMathIntegral key={"Integral"} />,
+      <TbMatrix key={"Matrix"} />,
+      <TbMathAvg key={"Discrete Math"} />,
+    ],
     interests: ["Discrete Mathematics", "Linear Algebra", "Calculus"],
     bgBase: "bg-purple-100",
     bgBadge: "bg-purple-200",
@@ -33,7 +43,11 @@ const cardsData = [
     title: "Interested in computers",
     description:
       "I am interested in the hardware and software of computers. However, I lean towards software more than hardware.",
-    emoji: "🔧",
+    emoji: [
+      <TbLogicAnd key={"Logic"} />,
+      <FaCode key={"Code"} />,
+      <GiArtificialIntelligence key={"AI"} />,
+    ],
     interests: [
       "Digital Circuits",
       "Artificial Intelligence",
@@ -60,8 +74,8 @@ export default function Home() {
         <ProfileCard />
       </div>
       <div className="bg-grayCustom flex flex-col items-center py-20 pb-40">
+        {/*About me Card */}
         <h1 className="font-jetbrains text-white text-3xl">About me</h1>
-
         <DotCards cardsData={cardsData} />
       </div>
     </>

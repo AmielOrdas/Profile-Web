@@ -24,7 +24,7 @@ export default function Projects() {
       {/* Vertical line - shows on hover or if clicked */}
       <div
         className={clsx(
-          "w-[1px] h-2 bg-white mb-1 mx-auto transition-opacity duration-500 gradient-line-vertical",
+          "absolute -top-2 w-[1px] h-3 bg-white mb-1 mx-auto transition-opacity duration-500 gradient-line-vertical",
           projectsVisible
             ? "opacity-100 "
             : "opacity-0 group-hover/project:opacity-100 group-hover/project:gradient-line-vertical"
@@ -35,7 +35,7 @@ export default function Projects() {
       <div className="flex flex-col space-y-1 items-center mx-auto">
         <p
           className={clsx(
-            "cursor-pointer hover:text-orangeCustom75 hover:underline transition-all duration-500 ease-in-out",
+            "cursor-pointer hover:text-orangeCustom75 hover:underline transition-all duration-500 ease-in-out mt-2",
             projectsVisible ? "text-orangeCustom100 underline" : "text-white"
           )}
         >
@@ -45,7 +45,7 @@ export default function Projects() {
         {/* Sub-navigation: only shows when hovered */}
         <div
           className={clsx(
-            "absolute top-full mt-1 max-h-40 overflow-y-auto   text-white  font-jetbrains text-[10px] transition-opacity duration-500 opacity-0 group-hover/project:opacity-100 z-50 bg-transparent"
+            "absolute top-full mt-3 max-h-40 overflow-y-auto   text-white  font-jetbrains text-[10px] transition-opacity duration-500 opacity-0 group-hover/project:opacity-100 z-50 bg-transparent"
           )}
         >
           <div

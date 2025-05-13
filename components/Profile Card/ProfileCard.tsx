@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/store";
 import { AnimatePresence } from "framer-motion";
+import Icon from "@/components/Icon";
 
 import { SlideLeftRightAnimation, RotateAnimation } from "../wrappers/Animation";
 
@@ -29,9 +30,7 @@ export function ProfileCard() {
         {/* Plus Icon (Placeholder) */}
 
         <div className="absolute top-[-20px] right-[-30px] ">
-          <RotateAnimation>
-            <Image src={Logo} alt="Logo" width={70} className="object-contain" />
-          </RotateAnimation>
+          <Icon rotate={true} size={90} />
         </div>
       </div>
 

@@ -22,7 +22,7 @@ export default function Thesis() {
       <div className="flex flex-col items-center group">
         <div
           className={clsx(
-            "w-[1px] h-4 bg-black mb-1 transition-opacity duration-200 gradient-line-vertical",
+            "w-[1px] h-1 bg-black mb-1 transition-opacity duration-200 gradient-line-vertical",
             thesisVisible ? "opacity-100" : "opacity-0 group-hover:opacity-100"
           )}
         />
