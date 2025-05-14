@@ -2,13 +2,6 @@
 import React from "react";
 import clsx from "clsx";
 
-interface SubNavigationProps {
-  handleClickSubNavigation: () => void;
-  subNavigationVisible: boolean;
-  subNavigationName: string;
-  index: number; // New index to space out the sub-navigation items
-}
-
 export default function SubNavigation({
   handleClickSubNavigation,
   subNavigationVisible,

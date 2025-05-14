@@ -1,6 +1,6 @@
 import ThesisDotCards from "@/components/Cards/ThesisDotCard";
 import Image from "next/image";
-import HardwareImage from "@/public/Picture3-removebg-preview.png";
+import HardwareImage from "@/public/Hardware Image With Labels.png";
 import {
   IntroductionCardsData,
   MethodologyData,

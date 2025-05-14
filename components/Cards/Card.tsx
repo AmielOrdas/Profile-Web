@@ -21,6 +21,11 @@ interface UtilitiesLink {
   url?: string;
 }
 
+type LinkItem = {
+  link: string;
+  linkDescription: string;
+};
+
 interface ProjectCardProps {
   title?: string;
   description?: string;
@@ -30,7 +35,7 @@ interface ProjectCardProps {
   utilities?: UtilitiesLink[];
   interests?: string[];
   emoji?: string | ReactNode | ReactNode[];
-  link?: string;
+  links?: LinkItem[];
   icons?: IconLink[];
   emojiMarginLeft?: string;
   bgBase?: string;
@@ -52,7 +57,7 @@ export default function CardTemplate(props: ProjectCardProps) {
     interests = [],
     generalCategory = "Interests",
     emoji = "🚀",
-    link = "#",
+    links = [],
     icons = [],
     emojiMarginLeft = "ml-5",
     bgBase = "bg-purple-100",
@@ -119,9 +124,9 @@ export default function CardTemplate(props: ProjectCardProps) {
   }
 
   return (
-    <div className={`${bgBase} rounded-xl overflow-hidden shadow-md w-2xl p-6`}>
+    <div className={`${bgBase} w-md rounded-xl overflow-hidden shadow-md sm:w-2xl  p-6`}>
       {/* Icons */}
-      <div className="w-full flex flex-wrap gap-3 mb-4">
+      <div className="hidden  w-full sm:flex flex-wrap gap-3 mb-4">
         {icons.map(function (iconObj, index) {
           return (
             <div key={index} className="gradient-border-hover p-1 rounded-full">
@@ -138,9 +143,27 @@ export default function CardTemplate(props: ProjectCardProps) {
         })}
       </div>
 
-      <div className="flex flex-row">
+      <div className="flex-col flex  sm:flex-row">
+        {/* Right */}
+        <div className="mx-auto sm:hidden w-full sm:w-[40%] flex items-center justify-center relative ">
+          <div
+            className={`w-50 h-50 ${bgBadge} rounded-full absolute opacity-50 translate-x-6 translate-y-2`}
+          />
+          <div
+            className={`w-50 h-50 ${iconBg} rounded-full absolute opacity-75 translate-x-6 translate-y-2`}
+          />
+          <div
+            className={`w-50 h-50 ${iconBg} rounded-full flex items-center justify-center text-3xl relative space-x-2 ${emojiMarginLeft}`}
+          >
+            {Array.isArray(emoji)
+              ? emoji.map(function (emj: React.ReactNode, index: number) {
+                  return <span key={index}>{emj}</span>;
+                })
+              : emoji}
+          </div>
+        </div>
         {/* Left */}
-        <div className="w-[60%] pr-4">
+        <div className="w-full sm:w-[60%] pr-4">
           <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
           <p className="text-gray-600 text-sm mb-4 text-justify">{description}</p>
           {renderTechGroup("Frontend", frontend)}
@@ -149,25 +172,28 @@ export default function CardTemplate(props: ProjectCardProps) {
           {renderTechGroup("Utilities", utilities)}
           {renderInterests(generalCategory, interests)}
 
-          {link && (
+          {links?.map((item, index) => (
             <a
-              href={link}
-              className={`${textLink} font-semibold hover:underline`}
+              key={index}
+              href={item.link}
+              className={`${textLink} font-semibold hover:underline mr-2`}
               target="_blank"
+              rel="noopener noreferrer"
             >
-              View Project <span className="text-gray-500 text-sm">&#8594;</span>
+              {item.linkDescription}{" "}
+              <span className={`${textLink} text-sm`}>&#8594;</span>
             </a>
-          )}
+          ))}
         </div>
 
         {/* Right */}
-        <div className="w-[40%] flex items-center justify-center relative">
+        <div className="hidden w-full sm:w-[40%] sm:flex items-center justify-center relative">
           <div
             className={`w-50 h-50 ${bgBadge} rounded-full absolute opacity-50 translate-x-6 translate-y-2`}
-          ></div>
+          />
           <div
             className={`w-50 h-50 ${iconBg} rounded-full absolute opacity-75 translate-x-6 translate-y-2`}
-          ></div>
+          />
           <div
             className={`w-50 h-50 ${iconBg} rounded-full flex items-center justify-center text-3xl relative space-x-2 ${emojiMarginLeft}`}
           >

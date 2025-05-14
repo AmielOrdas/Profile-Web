@@ -4,7 +4,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/components/wrappers/Redux";
 import NavigationArea from "@/components/Navigation/NavigationArea";
-import RouteDispatcher from "@/lib/RouteDispatcher";
+import RouteDispatcher from "@/components/RouteDispatcher";
 
 const JetBrainsFont = JetBrains_Mono({
   subsets: ["cyrillic"],

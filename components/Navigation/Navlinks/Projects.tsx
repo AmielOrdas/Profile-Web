@@ -23,8 +23,6 @@ export default function Projects() {
 
   return (
     <div className="flex flex-col items-center group/project relative">
-      {/* Vertical line - shows on hover or if clicked */}
-
       <LineWithCircle
         orientation="bottom"
         height="h-2"
@@ -43,7 +41,7 @@ export default function Projects() {
       <div className="flex flex-col space-y-1 items-center mx-auto">
         <p
           className={clsx(
-            "cursor-pointer hover:text-orangeCustom75 hover:underline transition-all duration-500 ease-in-out mt-3 ",
+            "cursor-pointer hover:text-orangeCustom75 hover:underline transition-all duration-500 ease-in-out mt-2 ",
             projectsVisible ? "text-orangeCustom100 underline" : "text-white"
           )}
         >
@@ -53,7 +51,7 @@ export default function Projects() {
           <SubNavigation
             handleClickSubNavigation={handleClickNextJS}
             subNavigationVisible={nextJSVisible}
-            subNavigationName={"NextJS"}
+            subNavigationName={"NextJS/React"}
             index={0}
           />
         </div>

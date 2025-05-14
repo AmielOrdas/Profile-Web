@@ -26,7 +26,7 @@ export default function CircleNavigation(props: CircleNavigationProps) {
             onClick={function () {
               onDotClick(index);
             }}
-            className={`w-3 h-3 rounded-full ${color} transition-transform duration-300 ${
+            className={`h-10 w-10 sm:w-3 sm:h-3 rounded-full ${color} transition-transform duration-300 ${
               isActive ? "ring-2 ring-offset-2 scale-100" : ""
             }`}
           />

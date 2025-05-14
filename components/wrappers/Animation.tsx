@@ -15,13 +15,6 @@ export function SlideLeftRightAnimation({ children }: { children: React.ReactNod
   );
 }
 
-// Rotate Animation
-interface RotateAnimationProps {
-  children: React.ReactNode;
-  duration?: number; // Optional: to control the rotation speed
-  repeat?: boolean; // Optional: whether to repeat the animation
-}
-
 export function RotateAnimation({
   children,
   duration = 5, // Default duration for one full rotation (5 seconds)

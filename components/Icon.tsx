@@ -7,13 +7,7 @@ function AmoCircle({
   ease = "linear",
   duration = 10,
   repeat = Infinity,
-}: {
-  rotate?: boolean;
-  size?: number;
-  ease?: string;
-  duration?: number;
-  repeat?: number;
-}) {
+}: AmoCircleProps) {
   const arrowFontSize = size * 0.15; // Dynamically scale arrow size (adjust ratio if needed)
 
   return (

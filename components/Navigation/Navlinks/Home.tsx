@@ -4,7 +4,7 @@ import { showHome, showNextJS, showProjects, showThesis } from "@/lib/redux/slic
 import { RootState } from "@/lib/redux/store";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 export default function Home() {
   const homeVisible = useSelector((state: RootState) => state.home.isVisible);
@@ -42,7 +42,7 @@ export default function Home() {
         {/* Home Text */}
         <p
           className={clsx(
-            "cursor-pointer group-hover:text-orangeCustom75 group-hover:underline transition-all duration-500 ease-in-out mt-3 pointer-events-auto",
+            "cursor-pointer group-hover:text-orangeCustom75 group-hover:underline transition-all duration-500 ease-in-out mt-2 pointer-events-auto",
             homeVisible ? "text-orangeCustom100 underline" : "text-white"
           )}
           onClick={handleClickHome}

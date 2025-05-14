@@ -4,12 +4,18 @@ interface IconLink {
   icon: React.ReactNode | string;
   url?: string;
 }
+
+type LinkItem = {
+  link: string;
+  linkDescription: string;
+};
+
 interface ProjectCardProps {
   title?: string;
   description?: string;
   interests?: string[];
   emoji?: string | ReactNode | ReactNode[];
-  link?: string;
+  links?: LinkItem[];
   icons?: IconLink[];
   emojiMarginLeft?: string;
   bgBase?: string;
@@ -28,13 +34,13 @@ export default function ThesisCard(props: ProjectCardProps) {
     interests = [],
     generalCategory = "",
     emoji = "",
-    link = "#",
+    links = [],
     icons = [],
     emojiMarginLeft = "ml-5",
     descriptionImage = "",
     bgBase = "bg-purple-100",
     bgBadge = "bg-purple-200",
-    textBadge = "text-purple-800",
+
     textLink = "text-purple-600",
     iconBg = "bg-purple-300",
   } = props;
@@ -62,7 +68,7 @@ export default function ThesisCard(props: ProjectCardProps) {
   }
 
   return (
-    <div className={`${bgBase} rounded-xl overflow-hidden shadow-md w-2xl p-6`}>
+    <div className={`${bgBase} w-md rounded-xl  overflow-hidden shadow-md sm:w-2xl p-6`}>
       {/* Icons */}
       <div className="w-full flex flex-wrap gap-3 mb-4">
         {icons.map(function (iconObj, index) {
@@ -90,15 +96,18 @@ export default function ThesisCard(props: ProjectCardProps) {
 
           {renderInterests(generalCategory, interests)}
 
-          {link && (
+          {links?.map((item, index) => (
             <a
-              href={link}
-              className={`${textLink} font-semibold hover:underline`}
+              key={index}
+              href={item.link}
+              className={`${textLink} font-semibold hover:underline mr-2`}
               target="_blank"
+              rel="noopener noreferrer"
             >
-              View ACM Article <span className="text-gray-500 text-sm">&#8594;</span>
+              {item.linkDescription}{" "}
+              <span className={`${textLink} text-sm`}>&#8594;</span>
             </a>
-          )}
+          ))}
         </div>
 
         {/* Right */}

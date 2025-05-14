@@ -1,11 +1,12 @@
 import DotCards from "@/components/Cards/DotCards";
 
-import { cardsData } from "@/lib/data/NextJS";
+import { EZCodeCardsData, ProfileWebAppCardsData } from "@/lib/data/NextJS";
 
 export default function Page() {
   return (
-    <div className="bg-grayCustom min-h-screen flex flex-col items-center pt-20 space-y-10">
-      <DotCards cardsData={cardsData} />
+    <div className="bg-grayCustom min-h-screen flex flex-col items-center pt-15 pb-5 space-y-10">
+      <DotCards cardsData={EZCodeCardsData} />
+      <DotCards cardsData={ProfileWebAppCardsData} />
     </div>
   );
 }

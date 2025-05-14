@@ -42,7 +42,7 @@ export default function Thesis() {
         {/* Text that triggers line visibility when hovered */}
         <p
           className={clsx(
-            "cursor-pointer group-hover:text-orangeCustom75 group-hover:underline transition-all duration-500 ease-in-out mt-3 pointer-events-auto",
+            "cursor-pointer group-hover:text-orangeCustom75 group-hover:underline transition-all duration-500 ease-in-out mt-2 pointer-events-auto",
             thesisVisible ? "text-orangeCustom100 underline" : "text-white"
           )}
           onClick={handleClickThesis}

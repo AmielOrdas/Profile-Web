@@ -1,17 +1,5 @@
 import React from "react";
 
-type Orientation = "top" | "bottom" | "left" | "right";
-
-type LineWithCircleProps = {
-  orientation?: Orientation;
-  height?: string; // Tailwind height class
-  width?: string; // Tailwind width class
-  color?: string; // Tailwind background color
-  circleSize?: string; // Tailwind width/height for the circle
-  circleBorder?: string; // Tailwind border class for the circle
-  circleInnerBackground?: string;
-  className?: string; // Additional utility classes
-};
 // Note: "Positioning (absolute/relative/etc.) should be applied via the className prop externally."
 
 export default function LineCircle({

@@ -12,11 +12,19 @@ export default function RouteDispatcher() {
   useEffect(() => {
     if (pathname === "/") {
       dispatch(showHome(true));
+      dispatch(showNextJS(false));
+      dispatch(showProjects(false));
+      dispatch(showThesis(false));
     } else if (pathname === "/NextJS") {
       dispatch(showNextJS(true));
+      dispatch(showHome(false));
       dispatch(showProjects(true));
+      dispatch(showThesis(false));
     } else if (pathname === "/Thesis") {
       dispatch(showThesis(true));
+      dispatch(showNextJS(false));
+      dispatch(showProjects(false));
+      dispatch(showHome(false));
     }
   }, [pathname]);
 

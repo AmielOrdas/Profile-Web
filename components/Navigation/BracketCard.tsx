@@ -62,15 +62,15 @@ export default function BracketCard() {
               <Icon rotate={false} size={100} />
             </div>
             {/*Upper bracket */}
-            <div className="w-170 h-10 border-l border-r border-t gradient-border-left mb-[-10px]">
+            <div className="w-70 sm:w-170 h-10 border-l border-r border-t gradient-border-left mb-[-10px]">
               <Achievements />
             </div>
 
-            <div className="text-center text-white text-6xl px-2 font-[1000]">
+            <div className="text-center text-white text-xl sm:text-6xl px-2 font-[1000]">
               Amiel Mir O. Ordas
             </div>
             {/*Lower bracket */}
-            <div className="w-170 h-10 border-l border-r border-b gradient-border-left mt-[-10px]" />
+            <div className="w-70 sm:w-170  h-10 border-l border-r border-b gradient-border-left mt-[-10px]" />
           </div>
         </motion.div>
       )}

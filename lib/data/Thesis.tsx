@@ -2,7 +2,6 @@ import Image from "next/image";
 import ConceptualFramework from "@/public/ConceptualFramework.png";
 import HardwareDevelopment from "@/public/HardwareFramework.png";
 import SoftwareDevelopment from "@/public/SoftwareFramework.png";
-import HardwareImage from "@/public/Picture3-removebg-preview.png";
 
 const IntroductionCardsData = [
   {
@@ -90,10 +89,17 @@ const MethodologyData = [
       "If there are 1-3 people about to cross then red light is activated with 15 seconds countdown",
       "If there are 4-7 people about to cross then  red light is activated with 20 seconds countdown",
       "If there are more than 7 people about to cross then red light is activated with 30 seconds countdown.",
+      "The GUI of the system is written in Python and the YOLOv8 algorithm is written in C++",
     ],
     emoji: <Image src={SoftwareDevelopment} alt="" width={150} />,
     iconBg: "bg-transparent",
-    link: "",
+    links: [
+      {
+        link: "https://github.com/ortegagerson/thesis_pbatlcuyv8/tree/main/C%2B%2B%20Variant",
+        linkDescription: "View GitHub Repository",
+      },
+    ],
+    linkDescription: "View GitHub Repository",
     bgBase: "bg-blue-100",
     bgBadge: "bg-blue-200",
     textBadge: "text-blue-800",
@@ -118,7 +124,12 @@ const resultsCardData = [
   {
     title: "ACM Article",
     description: "This thesis is submitted to the Association for Computing Machinery.",
-    link: "https://dl.acm.org/doi/10.1145/3700706.3700717?fbclid=IwZXh0bgNhZW0CMTEAAR3CWvWw9l1Lm88KCX_wftZqiBSg65GGiCEjZY5lcv9licdG1VLsIK_HIeU_aem_rq2MQnvnuglhlOstZmbXcg",
+    links: [
+      {
+        link: "https://dl.acm.org/doi/10.1145/3700706.3700717?fbclid=IwZXh0bgNhZW0CMTEAAR3CWvWw9l1Lm88KCX_wftZqiBSg65GGiCEjZY5lcv9licdG1VLsIK_HIeU_aem_rq2MQnvnuglhlOstZmbXcg",
+        linkDescription: "View ACM Article",
+      },
+    ],
     bgBase: "bg-blue-100",
     bgBadge: "bg-blue-200",
     textBadge: "text-blue-800",

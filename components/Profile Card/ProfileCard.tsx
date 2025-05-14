@@ -31,14 +31,6 @@ export function ProfileCard() {
         </div>
       </div>
 
-      {/* Profile Image (Placeholder) */}
-      {/* <div className="relative mt-5">
-        <div className="absolute left-1/2 transform -translate-x-1/2 -mt-20 w-60 h-60 rounded-full border-4 border-white bg-transparent flex items-center justify-center overflow-hidden">
-         
-          <Image src={GradPic} alt="" width={150} height={150} className="object-cover" />
-        </div>
-      </div> */}
-
       <div className="relative mt-5">
         <div className="absolute left-1/2 transform -translate-x-1/2 -mt-12 w-40 h-40 rounded-full border-4 border-white bg-gray-300 flex items-center justify-center">
           {/* You can replace this div with an img tag */}

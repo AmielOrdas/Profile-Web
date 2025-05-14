@@ -11,18 +11,6 @@ export default function Achievements() {
       {/* Vertical divider */}
       <div className="w-[1px] h-3 gradient-line-vertical" />
 
-      {/* <div className=" text-center mr-2 mt-0.5">
-        <p>Computer Engineer</p>
-      </div>
-
-      <div className="w-[1px] h-3 gradient-line-vertical" />
-
-      <div className=" text-center mr-2 mt-0.5">
-        <p>Computer Engineer</p>
-      </div>
-
-      <div className="w-[1px] h-3 gradient-line-vertical" /> */}
-
       {/* Middle text */}
       <div className="flex-1 text-left ml-2 ">
         <div className="flex items-center space-x-1 inline-flex group">
