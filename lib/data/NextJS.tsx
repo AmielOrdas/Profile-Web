@@ -117,7 +117,7 @@ const ProfileWebAppCardsData = [
     iconBg: "bg-purpleCustom",
     links: [
       {
-        link: "https://example.com",
+        link: "https://amiel-mir-ordas-amo-profile.vercel.app/",
         linkDescription: "View Project",
       },
     ],

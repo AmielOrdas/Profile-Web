@@ -31,7 +31,7 @@ export default function LinksAndContacts() {
           </a>
 
           <a
-            href="https://yourwebsite.com"
+            href="https://amiel-mir-ordas-amo-profile.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-1 text-black hover:text-orangeCustom75 hover:underline"
