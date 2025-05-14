@@ -1,6 +1,6 @@
-import React from "react";
-
 // Note: "Positioning (absolute/relative/etc.) should be applied via the className prop externally."
+
+import { LineWithCircleProps } from "@/lib/types";
 
 export default function LineCircle({
   orientation = "top",

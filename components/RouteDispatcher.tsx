@@ -26,7 +26,7 @@ export default function RouteDispatcher() {
       dispatch(showProjects(false));
       dispatch(showHome(false));
     }
-  }, [pathname]);
+  }, [pathname, dispatch]);
 
   return null;
 }

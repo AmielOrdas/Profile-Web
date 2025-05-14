@@ -1,5 +1,5 @@
+import { AmoCircleProps } from "@/lib/types";
 import { motion } from "framer-motion";
-import React from "react";
 
 function AmoCircle({
   rotate = false,
@@ -41,7 +41,7 @@ function AmoCircle({
             >
               1
             </span>
-            &gt;'
+            &gt;&apos;
           </p>
         </div>
 

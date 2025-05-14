@@ -1,4 +1,5 @@
 // Animations.tsx
+import { RotateAnimationProps } from "@/lib/types";
 import { AnimatePresence, motion } from "framer-motion";
 
 // Slide Left/Right Animation

@@ -3,32 +3,10 @@ import React, { useState } from "react";
 import ThesisCard from "./ThesisCard";
 import CircleNavigation from "./CircleNavigation";
 import { CardFlip } from "../wrappers/Animation";
+import { ThesisDotCardsProps } from "@/lib/types";
 
-interface CardData {
-  title?: string;
-  description?: string;
-  emoji?: string | React.ReactNode[] | React.ReactNode;
-  interests?: string[];
-  bgBase?: string;
-  bgBadge?: string;
-  textBadge?: string;
-  textLink?: string;
-  iconBg?: string;
-  link?: string;
-  generalCategory?: string;
-  icons?: {
-    icon: React.ReactNode | string;
-    url?: string;
-  }[];
-}
-
-interface DotCardsProps {
-  cardsData?: CardData[];
-  bgBase?: string;
-}
-
-export default function ThesisDotCards(props: DotCardsProps) {
-  const { cardsData = [], bgBase = "bg-gray-700" } = props;
+export default function ThesisDotCards(props: ThesisDotCardsProps) {
+  const { cardsData = [] } = props;
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   function handleDotClick(index: number) {
@@ -51,7 +29,7 @@ export default function ThesisDotCards(props: DotCardsProps) {
             currentIndex={currentCardIndex}
             onDotClick={handleDotClick}
             bgColors={cardsData.map((item) => {
-              return item.bgBase ?? "bg-gray-800";
+              return item.bgBase ?? "bg-gray-700";
             })}
           />
         </div>

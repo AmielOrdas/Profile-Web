@@ -1,33 +1,6 @@
-import { ReactNode } from "react";
-import Image from "next/image";
-interface IconLink {
-  icon: React.ReactNode | string;
-  url?: string;
-}
+import { ThesisCardProps } from "@/lib/types";
 
-type LinkItem = {
-  link: string;
-  linkDescription: string;
-};
-
-interface ProjectCardProps {
-  title?: string;
-  description?: string;
-  interests?: string[];
-  emoji?: string | ReactNode | ReactNode[];
-  links?: LinkItem[];
-  icons?: IconLink[];
-  emojiMarginLeft?: string;
-  bgBase?: string;
-  bgBadge?: string;
-  textBadge?: string;
-  textLink?: string;
-  iconBg?: string;
-  generalCategory?: string;
-  descriptionImage?: React.ReactNode | "";
-}
-
-export default function ThesisCard(props: ProjectCardProps) {
+export default function ThesisCard(props: ThesisCardProps) {
   const {
     title = "Project Title",
     description = "",

@@ -3,26 +3,9 @@ import React, { useState } from "react";
 import Card from "./Card";
 import CircleNavigation from "./CircleNavigation";
 import { CardFlip } from "../wrappers/Animation";
+import { ProjectDotCardsProps } from "@/lib/types";
 
-interface CardData {
-  title?: string;
-  description?: string;
-  emoji?: string | React.ReactNode[] | React.ReactNode;
-  interests?: string[];
-  bgBase?: string;
-  bgBadge?: string;
-  textBadge?: string;
-  textLink?: string;
-  iconBg?: string;
-  link?: string;
-  generalCategory?: string;
-}
-
-interface DotCardsProps {
-  cardsData?: CardData[];
-}
-
-export default function DotCards(props: DotCardsProps) {
+export default function DotCards(props: ProjectDotCardsProps) {
   const { cardsData = [] } = props;
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
