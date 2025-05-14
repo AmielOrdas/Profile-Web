@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import clsx from "clsx";
 import { RootState } from "@/lib/redux/store";
 import { useRouter } from "next/navigation";
+import SubNavigation from "../SubNavigation";
+import LineWithCircle from "@/components/LineCircle";
 
 export default function Projects() {
   const projectsVisible = useSelector((state: RootState) => state.projects.isVisible);
@@ -19,15 +21,21 @@ export default function Projects() {
     router.push("/NextJS");
   }
 
+  const defaultMarginTop = 6;
+
   return (
     <div className="flex flex-col items-center group/project relative">
       {/* Vertical line - shows on hover or if clicked */}
-      <div
+      <LineWithCircle
+        orientation="bottom"
+        height="h-2"
+        width="w-[2px]"
+        color="gradient-line-vertical"
+        circleSize="w-2 h-2"
+        circleBorder="p-[2px] gradient-border-static"
         className={clsx(
-          "absolute -top-2 w-[1px] h-3 bg-white mb-1 mx-auto transition-opacity duration-500 gradient-line-vertical",
-          projectsVisible
-            ? "opacity-100 "
-            : "opacity-0 group-hover/project:opacity-100 group-hover/project:gradient-line-vertical"
+          "absolute -top-2 mb-1 mx-auto transition-opacity duration-500",
+          projectsVisible ? "opacity-100" : "opacity-0 group-hover/project:opacity-100"
         )}
       />
 
@@ -35,45 +43,19 @@ export default function Projects() {
       <div className="flex flex-col space-y-1 items-center mx-auto">
         <p
           className={clsx(
-            "cursor-pointer hover:text-orangeCustom75 hover:underline transition-all duration-500 ease-in-out mt-2",
+            "cursor-pointer hover:text-orangeCustom75 hover:underline transition-all duration-500 ease-in-out mt-3",
             projectsVisible ? "text-orangeCustom100 underline" : "text-white"
           )}
         >
           Projects
         </p>
-
-        {/* Sub-navigation: only shows when hovered */}
-        <div
-          className={clsx(
-            "absolute top-full mt-3 max-h-40 overflow-y-auto   text-white  font-jetbrains text-[10px] transition-opacity duration-500 opacity-0 group-hover/project:opacity-100 z-50 bg-transparent"
-          )}
-        >
-          <div
-            className="flex space-x-1 cursor-pointer pl-8 group/Next"
-            onClick={handleClickNextJS}
-          >
-            <p
-              className={clsx(
-                " transition-all duration-500",
-                nextJSVisible
-                  ? "text-orangeCustom100"
-                  : "text-white group-hover/Next:text-orangeCustom100"
-              )}
-            >
-              └
-            </p>
-
-            <p
-              className={clsx(
-                "cursor-pointer transition-all duration-500",
-                nextJSVisible
-                  ? "text-orangeCustom100 underline"
-                  : "text-white group-hover/Next:text-orangeCustom100 group-hover/Next:underline"
-              )}
-            >
-              NextJS
-            </p>
-          </div>
+        <div className="flex flex-col relative">
+          <SubNavigation
+            handleClickSubNavigation={handleClickNextJS}
+            subNavigationVisible={nextJSVisible}
+            subNavigationName={"NextJS"}
+            index={0}
+          />
         </div>
       </div>
     </div>

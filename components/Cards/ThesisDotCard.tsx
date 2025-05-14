@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Card from "./Card";
+import ThesisCard from "./ThesisCard";
 import CircleNavigation from "./CircleNavigation";
 import { CardFlip } from "../wrappers/Animation";
 
@@ -16,14 +16,19 @@ interface CardData {
   iconBg?: string;
   link?: string;
   generalCategory?: string;
+  icons?: {
+    icon: React.ReactNode | string;
+    url?: string;
+  }[];
 }
 
 interface DotCardsProps {
   cardsData?: CardData[];
+  bgBase?: string;
 }
 
-export default function DotCards(props: DotCardsProps) {
-  const { cardsData = [] } = props;
+export default function ThesisDotCards(props: DotCardsProps) {
+  const { cardsData = [], bgBase = "bg-gray-700" } = props;
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   function handleDotClick(index: number) {
@@ -35,7 +40,7 @@ export default function DotCards(props: DotCardsProps) {
     <div className="flex flex-col items-center justify-center">
       <div className="relative w-full h-full">
         <CardFlip currentCardIndex={currentCardIndex}>
-          <Card {...cardsData[currentCardIndex]} />
+          <ThesisCard {...cardsData[currentCardIndex]} />
         </CardFlip>
       </div>
 
@@ -45,7 +50,7 @@ export default function DotCards(props: DotCardsProps) {
             total={cardsData.length}
             currentIndex={currentCardIndex}
             onDotClick={handleDotClick}
-            bgColors={cardsData.map(function (item) {
+            bgColors={cardsData.map((item) => {
               return item.bgBase ?? "bg-gray-800";
             })}
           />

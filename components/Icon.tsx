@@ -1,7 +1,19 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-function AmoCircle({ rotate = false, size = 200 }: { rotate?: boolean; size?: number }) {
+function AmoCircle({
+  rotate = false,
+  size = 200,
+  ease = "linear",
+  duration = 10,
+  repeat = Infinity,
+}: {
+  rotate?: boolean;
+  size?: number;
+  ease?: string;
+  duration?: number;
+  repeat?: number;
+}) {
   const arrowFontSize = size * 0.15; // Dynamically scale arrow size (adjust ratio if needed)
 
   return (
@@ -43,11 +55,11 @@ function AmoCircle({ rotate = false, size = 200 }: { rotate?: boolean; size?: nu
         {rotate ? (
           <motion.div
             className="absolute inset-0"
-            animate={{ rotate: 360 }}
+            animate={{ rotate: 720 }}
             transition={{
-              repeat: Infinity,
-              duration: 10,
-              ease: "linear",
+              repeat: repeat,
+              duration: duration,
+              ease: ease,
             }}
           >
             <div

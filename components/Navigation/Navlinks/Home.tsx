@@ -1,4 +1,5 @@
 "use client";
+import LineWithCircle from "@/components/LineCircle";
 import { showHome, showNextJS, showProjects, showThesis } from "@/lib/redux/slice";
 import { RootState } from "@/lib/redux/store";
 import clsx from "clsx";
@@ -30,9 +31,16 @@ export default function Home() {
       {/* Home */}
       <div className="flex flex-col items-center group relative">
         {/* Upper vertical line */}
-        <div
+
+        <LineWithCircle
+          orientation="bottom"
+          height="h-2"
+          width="w-[2px]"
+          color="gradient-line-vertical"
+          circleSize="w-2 h-2"
+          circleBorder="p-[2px] gradient-border-static"
           className={clsx(
-            "absolute -top-2 w-[1px] h-3 bg-black mb-1 transition-opacity duration-500 gradient-line-vertical",
+            "absolute -top-2 mb-1 mx-auto transition-opacity duration-500",
             homeVisible ? "opacity-100" : "opacity-0 group-hover:opacity-100 "
           )}
         />
@@ -40,7 +48,7 @@ export default function Home() {
         {/* Home Text */}
         <p
           className={clsx(
-            "cursor-pointer group-hover:text-orangeCustom75 group-hover:underline transition-all duration-500 ease-in-out mt-2",
+            "cursor-pointer group-hover:text-orangeCustom75 group-hover:underline transition-all duration-500 ease-in-out mt-3",
             homeVisible ? "text-orangeCustom100 underline" : "text-white"
           )}
           onClick={handleClickHome}

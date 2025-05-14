@@ -38,6 +38,7 @@ interface ProjectCardProps {
   textBadge?: string;
   textLink?: string;
   iconBg?: string;
+  generalCategory?: string;
 }
 
 export default function CardTemplate(props: ProjectCardProps) {
@@ -49,6 +50,7 @@ export default function CardTemplate(props: ProjectCardProps) {
     database = [],
     utilities = [],
     interests = [],
+    generalCategory = "Interests",
     emoji = "🚀",
     link = "#",
     icons = [],
@@ -145,7 +147,7 @@ export default function CardTemplate(props: ProjectCardProps) {
           {renderTechGroup("Backend", backend)}
           {renderTechGroup("Database", database)}
           {renderTechGroup("Utilities", utilities)}
-          {renderInterests("Interests", interests)}
+          {renderInterests(generalCategory, interests)}
 
           {link && (
             <a
