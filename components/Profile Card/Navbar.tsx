@@ -2,6 +2,7 @@ import { showQualifications, showSkills, showLinksAndContacts } from "@/lib/redu
 import { useDispatch, useSelector } from "react-redux";
 import clsx from "clsx";
 import { RootState } from "@/lib/redux/store";
+import LineCircle from "../LineCircle";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -40,16 +41,23 @@ export default function Navbar() {
       {/* Items with vertical line attached to horizontal line */}
       <div className="flex justify-center gap-8 text-xs font-jetbrains font-semibold text-black mt-[-5px]">
         {/* Qualifications */}
-        <div className="flex flex-col items-center group">
-          <div
+        <div className="flex flex-col items-center group pointer-events-none">
+          <LineCircle
+            orientation="bottom"
+            height="h-3"
+            width="w-[1px]"
+            color="gradient-line-vertical"
+            circleSize="w-2 h-2"
+            circleBorder="p-[2px] gradient-border-static"
+            circleInnerBackground="bg-white"
             className={clsx(
-              "w-[1px] h-4 bg-black mb-1 transition-opacity duration-200 gradient-line-vertical",
+              "mb-1 mx-auto transition-opacity duration-200 ",
               qualificationsVisible ? "opacity-100" : "opacity-0 group-hover:opacity-100"
             )}
           />
           <p
             className={clsx(
-              "cursor-pointer hover:text-orangeCustom75 hover:underline",
+              "cursor-pointer group-hover:text-orangeCustom75 group-hover:underline pointer-events-auto",
               qualificationsVisible ? "text-orangeCustom100 underline" : ""
             )}
             onClick={handleClickQualifications}
@@ -59,16 +67,23 @@ export default function Navbar() {
         </div>
 
         {/* Skills */}
-        <div className="flex flex-col items-center group">
-          <div
+        <div className="flex flex-col items-center group pointer-events-none">
+          <LineCircle
+            orientation="bottom"
+            height="h-3"
+            width="w-[1px]"
+            color="gradient-line-vertical"
+            circleSize="w-2 h-2"
+            circleBorder="p-[2px] gradient-border-static"
+            circleInnerBackground="bg-white"
             className={clsx(
-              "w-[1px] h-4 bg-black mb-1 transition-opacity duration-200 gradient-line-vertical",
+              "mb-1 mx-auto transition-opacity duration-200",
               skillsVisible ? "opacity-100" : "opacity-0 group-hover:opacity-100"
             )}
           />
           <p
             className={clsx(
-              "cursor-pointer hover:text-orangeCustom75 hover:underline ",
+              "cursor-pointer hover:text-orangeCustom75 hover:underline pointer-events-auto ",
               skillsVisible ? "text-orangeCustom100 underline" : ""
             )}
             onClick={handleClickSkills}
@@ -78,10 +93,17 @@ export default function Navbar() {
         </div>
 
         {/* Links & Contacts */}
-        <div className="flex flex-col items-center group">
-          <div
+        <div className="flex flex-col items-center group pointer-events-none">
+          <LineCircle
+            orientation="bottom"
+            height="h-3"
+            width="w-[1px]"
+            color="gradient-line-vertical"
+            circleSize="w-2 h-2"
+            circleBorder="p-[2px] gradient-border-static"
+            circleInnerBackground="bg-white"
             className={clsx(
-              "w-[1px] h-4 bg-black mb-1 transition-opacity duration-200 gradient-line-vertical",
+              "mb-1 mx-auto transition-opacity duration-200 ",
               linksAndContactsVisible
                 ? "opacity-100"
                 : "opacity-0 group-hover:opacity-100"
@@ -89,7 +111,7 @@ export default function Navbar() {
           />
           <p
             className={clsx(
-              "cursor-pointer hover:text-orangeCustom75 hover:underline",
+              "cursor-pointer hover:text-orangeCustom75 hover:underline pointer-events-auto",
               linksAndContactsVisible ? "text-orangeCustom100 underline" : ""
             )}
             onClick={handleClickLinksAndContacts}

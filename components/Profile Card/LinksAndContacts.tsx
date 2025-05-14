@@ -11,20 +11,20 @@ export default function LinksAndContacts() {
         </p>
         <div className="space-y-2">
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/amiel-mir-ordas-6a7146350/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-1 text-black hover:text-orangeCustom hover:underline"
+            className="flex items-center space-x-1 text-black hover:text-orangeCustom75 hover:underline"
           >
             <SiLinkedin size={17} color="orange" />
             <span className="">LinkedIn Profile</span>
           </a>
 
           <a
-            href="https://github.com/yourprofile"
+            href="https://github.com/AmielOrdas"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-1 text-black hover:text-orangeCustom hover:underline"
+            className="flex items-center space-x-1 text-black hover:text-orangeCustom75 hover:underline"
           >
             <SiGithub size={17} color="orange" />
             <span className="">GitHub Profile</span>
@@ -34,7 +34,7 @@ export default function LinksAndContacts() {
             href="https://yourwebsite.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-1 text-black hover:text-orangeCustom hover:underline"
+            className="flex items-center space-x-1 text-black hover:text-orangeCustom75 hover:underline"
           >
             <Globe size={17} color="orange" />
             <span className="">Website</span>

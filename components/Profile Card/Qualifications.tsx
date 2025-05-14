@@ -1,4 +1,4 @@
-import { GraduationCapIcon, NotebookPen } from "lucide-react";
+import { GraduationCapIcon, NotebookPen, SquareArrowOutUpRight } from "lucide-react";
 
 export default function Qualifications() {
   return (
@@ -11,7 +11,20 @@ export default function Qualifications() {
         <p>
           <span className="ml-0.5 flex items-center space-x-1">
             <NotebookPen size={17} color="orange" />
-            <span>Civil Service Exam Passer — Professional</span>
+            <span className="flex group">
+              <a
+                href="https://exam.csc.gov.ph/detail_examinee.php?id=36918"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group-hover:text-orangeCustom75 group-hover:underline"
+              >
+                Civil Service Exam Passer - Professional
+              </a>
+              <SquareArrowOutUpRight
+                size={8}
+                className="group-hover:text-orangeCustom75 group-hover:underline"
+              />
+            </span>
           </span>
         </p>
       </div>

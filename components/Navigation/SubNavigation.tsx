@@ -25,7 +25,7 @@ export default function SubNavigation({
       style={{ top: marginTop }} // Apply dynamic margin-top based on the index
     >
       <div
-        className="flex space-x-1 cursor-pointer group/Next"
+        className="flex space-x-1 cursor-pointer pointer-events-auto group/Next"
         onClick={handleClickSubNavigation}
       >
         <p
@@ -41,7 +41,7 @@ export default function SubNavigation({
 
         <p
           className={clsx(
-            "cursor-pointer transition-all duration-500",
+            "cursor-pointer transition-all duration-500 ",
             subNavigationVisible
               ? "text-orangeCustom100 underline"
               : "text-white group-hover/Next:text-orangeCustom100 group-hover/Next:underline"

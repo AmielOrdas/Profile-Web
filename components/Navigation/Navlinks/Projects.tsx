@@ -21,11 +21,10 @@ export default function Projects() {
     router.push("/NextJS");
   }
 
-  const defaultMarginTop = 6;
-
   return (
     <div className="flex flex-col items-center group/project relative">
       {/* Vertical line - shows on hover or if clicked */}
+
       <LineWithCircle
         orientation="bottom"
         height="h-2"
@@ -33,8 +32,9 @@ export default function Projects() {
         color="gradient-line-vertical"
         circleSize="w-2 h-2"
         circleBorder="p-[2px] gradient-border-static"
+        circleInnerBackground="bg-grayCustom"
         className={clsx(
-          "absolute -top-2 mb-1 mx-auto transition-opacity duration-500",
+          "absolute -top-2 mb-1 mx-auto transition-opacity duration-500 ",
           projectsVisible ? "opacity-100" : "opacity-0 group-hover/project:opacity-100"
         )}
       />
@@ -43,7 +43,7 @@ export default function Projects() {
       <div className="flex flex-col space-y-1 items-center mx-auto">
         <p
           className={clsx(
-            "cursor-pointer hover:text-orangeCustom75 hover:underline transition-all duration-500 ease-in-out mt-3",
+            "cursor-pointer hover:text-orangeCustom75 hover:underline transition-all duration-500 ease-in-out mt-3 ",
             projectsVisible ? "text-orangeCustom100 underline" : "text-white"
           )}
         >
