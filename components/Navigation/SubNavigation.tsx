@@ -1,6 +1,7 @@
 // SubNavigation.tsx
 import React from "react";
 import clsx from "clsx";
+import { SubNavigationProps } from "@/lib/types";
 
 export default function SubNavigation({
   handleClickSubNavigation,
