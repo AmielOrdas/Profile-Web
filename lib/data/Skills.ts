@@ -5,4 +5,6 @@ export const skillsArray = [
   { skill: "NextJS", link: "/NextJS" },
   { skill: "Postgres", link: "/NextJS" },
   { skill: "Neon", link: "/NextJS" },
+  { skill: "Figma", link: "/NextJS" },
+  { skill: "Canva", link: "/NextJS" },
 ];
