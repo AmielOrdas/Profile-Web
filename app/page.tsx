@@ -6,7 +6,7 @@ import { cardsData } from "@/lib/data/Home";
 export default function Home() {
   return (
     <>
-      <div className="min-h-screen ">
+      <div className="min-h-screen">
         <BracketCard />
       </div>
       <div className="bg-grayCustom  text-center py-5">

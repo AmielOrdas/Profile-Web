@@ -78,7 +78,9 @@ export default function CardTemplate(props: ProjectCardProps) {
   }
 
   return (
-    <div className={`${bgBase} w-md rounded-xl overflow-hidden shadow-md sm:w-2xl  p-6`}>
+    <div
+      className={`${bgBase} w-[300px] p-2 rounded-xl overflow-hidden shadow-md sm:w-2xl  sm:p-6`}
+    >
       {/* Icons */}
       <div className="hidden  w-full sm:flex flex-wrap gap-3 mb-4">
         {icons.map(function (iconObj, index) {
@@ -101,13 +103,13 @@ export default function CardTemplate(props: ProjectCardProps) {
         {/* Right */}
         <div className="mx-auto sm:hidden w-full sm:w-[40%] flex items-center justify-center relative ">
           <div
-            className={`w-50 h-50 ${bgBadge} rounded-full absolute opacity-50 translate-x-6 translate-y-2`}
+            className={`w-40 h-40 sm:w-50 sm:h-50 ${bgBadge} rounded-full absolute opacity-50 translate-x-6 translate-y-2`}
           />
           <div
-            className={`w-50 h-50 ${iconBg} rounded-full absolute opacity-75 translate-x-6 translate-y-2`}
+            className={`w-40 h-40 sm:w-50 sm:h-50 ${iconBg} rounded-full absolute opacity-75 translate-x-6 translate-y-2`}
           />
           <div
-            className={`w-50 h-50 ${iconBg} rounded-full flex items-center justify-center text-3xl relative space-x-2 ${emojiMarginLeft}`}
+            className={`w-40 h-40 sm:w-50 sm:h-50 ${iconBg} rounded-full flex items-center justify-center text-3xl relative space-x-2 ${emojiMarginLeft}`}
           >
             {Array.isArray(emoji)
               ? emoji.map(function (emj: React.ReactNode, index: number) {
@@ -118,8 +120,12 @@ export default function CardTemplate(props: ProjectCardProps) {
         </div>
         {/* Left */}
         <div className="w-full sm:w-[60%] pr-4">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
-          <p className="text-gray-600 text-sm mb-4 text-justify">{description}</p>
+          <h2 className="text-lg text-center mt-5 sm:text-start sm:text-2xl sm:mt-0 font-bold text-gray-800 mb-2">
+            {title}
+          </h2>
+          <p className="text-gray-800 text-sm mb-4 text-justify tracking-wide">
+            {description}
+          </p>
           {renderTechGroup("Frontend", frontend)}
           {renderTechGroup("Backend", backend)}
           {renderTechGroup("Database", database)}

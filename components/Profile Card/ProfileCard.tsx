@@ -23,10 +23,10 @@ export function ProfileCard() {
   );
 
   return (
-    <div className="bg-white rounded-3xl shadow-lg overflow-visible max-w-sm min-h-[500px] mx-auto relative">
+    <div className="w-[300px] bg-gray-100 rounded-3xl shadow-lg overflow-visible sm:w-sm min-h-[520px] mx-auto relative">
       {/* Top Orange Section */}
       <div className="bg-orangeCustom75 h-25 rounded-t-3xl">
-        <div className="absolute top-[-20px] right-[-30px] ">
+        <div className="absolute top-[-10px] right-[-2px] sm:top-[-20px] sm:right-[-30px] ">
           <Icon rotate={true} size={90} />
         </div>
       </div>
@@ -40,10 +40,10 @@ export function ProfileCard() {
 
       {/* Name and Title */}
       <div className="px-6 pt-30 pb-4 text-justify">
-        <h2 className="text-center text-xl font-jetbrains font-[1000] ">
+        <h2 className="sm:text-center text-xl font-jetbrains font-[1000] ">
           Amiel Mir O. Ordas
         </h2>
-        <p className="text-gray-600 text-xs mt-2">
+        <p className="text-gray-600 text-xs mt-2  tracking-wide  ">
           I&apos;m Amiel, a recent graduate in computer engineering working towards
           becoming a software engineer. I love learning, programming, mathematics, and
           solving real problems.

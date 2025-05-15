@@ -39,7 +39,7 @@ export default function Navbar() {
       <div className="w-full h-[1px] gradient-line-horizontal-to-right mb-1 relative z-0" />
 
       {/* Items with vertical line attached to horizontal line */}
-      <div className="flex justify-center gap-8 text-xs font-jetbrains font-semibold text-black mt-[-5px]">
+      <div className="flex justify-center gap-3 sm:gap-8 text-xs font-jetbrains font-semibold text-black mt-[-5px]">
         {/* Qualifications */}
         <div className="flex flex-col items-center group pointer-events-none">
           <LineCircle
@@ -57,8 +57,8 @@ export default function Navbar() {
           />
           <p
             className={clsx(
-              "cursor-pointer group-hover:text-orangeCustom75 group-hover:underline pointer-events-auto",
-              qualificationsVisible ? "text-orangeCustom100 underline" : ""
+              "cursor-pointer group-hover:text-orangeCustom100 group-hover:underline pointer-events-auto",
+              qualificationsVisible ? "text-orangeCustom75 underline" : ""
             )}
             onClick={handleClickQualifications}
           >

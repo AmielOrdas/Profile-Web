@@ -14,7 +14,9 @@ export default function page() {
       <ThesisDotCards cardsData={IntroductionCardsData} />
       <h1 className="font-jetbrains text-white text-3xl">Methodology</h1>
       <ThesisDotCards cardsData={MethodologyData} />
-      <h1 className="font-jetbrains text-white text-3xl">Results and ACM Link</h1>
+      <h1 className="font-jetbrains text-white text-3xl text-center">
+        Results and ACM Link
+      </h1>
       <ThesisDotCards cardsData={resultsCardData} />
       <h1 className="font-jetbrains text-white text-3xl">Prototype Image</h1>
       <Image src={HardwareImage} alt="" />

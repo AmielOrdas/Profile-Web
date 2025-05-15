@@ -91,7 +91,7 @@ const MethodologyData = [
       "If there are more than 7 people about to cross then red light is activated with 30 seconds countdown.",
       "The GUI of the system is written in Python and the YOLOv8 algorithm is written in C++",
     ],
-    emoji: <Image src={SoftwareDevelopment} alt="" width={150} />,
+    descriptionImage: <Image src={SoftwareDevelopment} alt="" width={150} />,
     iconBg: "bg-transparent",
     links: [
       {

@@ -21,7 +21,7 @@ function AmoCircle({
       >
         {/* Purple Inner Circle */}
         <div
-          className="rounded-full bg-purpleCustom flex justify-center items-center border"
+          className="rounded-full bg-purpleCustom flex justify-center items-center border border-black"
           style={{
             width: `${size * 0.66}px`,
             height: `${size * 0.66}px`,

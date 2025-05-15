@@ -47,9 +47,8 @@ export function CardFlip({
       <motion.div
         key={currentCardIndex}
         initial={{ rotateY: 90 }}
-        animate={{ rotateY: 0 }}
-        exit={{ rotateY: -90 }}
-        transition={{ duration: 0.3 }}
+        animate={{ rotateY: 0, transition: { duration: 0.8 } }}
+        exit={{ rotateY: -90, transition: { duration: 0.3, ease: "easeOut" } }}
         className="w-full"
         style={{
           perspective: 1000,

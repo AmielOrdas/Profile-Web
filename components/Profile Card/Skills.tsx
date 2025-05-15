@@ -9,7 +9,7 @@ export default function Skills() {
           <Link
             key={index}
             href={item.link}
-            className="bg-orangeCustomLow text-orangeCustom100 text-xs font-[1000] rounded-full px-2 py-1 mt-2 hover:underline hover:text-orangeCustom75 transition"
+            className="bg-orange-200 text-orange-800 text-xs rounded-full px-2 py-1 mt-2 font-semibold hover:underline hover:text-orangeCustom75 font-semibold transition"
           >
             {item.skill}
           </Link>

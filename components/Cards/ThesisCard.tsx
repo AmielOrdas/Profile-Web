@@ -41,7 +41,9 @@ export default function ThesisCard(props: ThesisCardProps) {
   }
 
   return (
-    <div className={`${bgBase} w-md rounded-xl  overflow-hidden shadow-md sm:w-2xl p-6`}>
+    <div
+      className={`${bgBase} w-[300px] rounded-xl  overflow-hidden shadow-md sm:w-2xl p-6`}
+    >
       {/* Icons */}
       <div className="w-full flex flex-wrap gap-3 mb-4">
         {icons.map(function (iconObj, index) {
@@ -63,7 +65,7 @@ export default function ThesisCard(props: ThesisCardProps) {
       <div className="flex flex-row">
         {/* Left */}
         <div className="w-[100%] pr-4">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">{title}</h2>
           <p className="text-gray-600 text-sm mb-4 text-justify">{description}</p>
           <div className="flex justify-center">{descriptionImage}</div>
 

@@ -2,7 +2,7 @@ import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function Achievements() {
   return (
-    <div className="flex justify-center items-start gap-1 text-[9px] font-semibold text-white h-3 relative">
+    <div className="flex justify-center items-start gap-1 text-[7px] sm:text-[9px] font-semibold text-white h-3 relative">
       {/* Left text */}
       <div className="flex-1 text-right mr-2">
         <p>Computer Engineer</p>
