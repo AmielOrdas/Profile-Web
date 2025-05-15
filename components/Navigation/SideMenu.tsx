@@ -2,7 +2,6 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -11,13 +10,13 @@ import { showHome, showNextJS, showProjects, showThesis } from "@/lib/redux/slic
 import { RootState } from "@/lib/redux/store";
 import clsx from "clsx";
 import Link from "next/link";
-import router from "next/router";
+
 import { CiMenuBurger } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function SideMenu() {
   const homeVisible = useSelector((state: RootState) => state.home.isVisible);
-  const projectsVisible = useSelector((state: RootState) => state.projects.isVisible);
+
   const nextJSVisible = useSelector((state: RootState) => state.projects.nextJSVisible);
   const thesisVisible = useSelector((state: RootState) => state.thesis.isVisible);
 
