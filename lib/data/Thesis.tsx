@@ -93,13 +93,7 @@ const MethodologyData = [
     ],
     descriptionImage: <Image src={SoftwareDevelopment} alt="" width={150} />,
     iconBg: "bg-transparent",
-    links: [
-      {
-        link: "https://github.com/ortegagerson/thesis_pbatlcuyv8/tree/main/C%2B%2B%20Variant",
-        linkDescription: "View GitHub Repository",
-      },
-    ],
-    linkDescription: "View GitHub Repository",
+
     bgBase: "bg-blue-100",
     bgBadge: "bg-blue-200",
     textBadge: "text-blue-800",

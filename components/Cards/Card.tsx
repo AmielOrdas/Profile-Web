@@ -136,7 +136,7 @@ export default function CardTemplate(props: ProjectCardProps) {
             <a
               key={index}
               href={item.link}
-              className={`${textLink} font-semibold hover:underline mr-2`}
+              className={`${textLink} font-semibold hover:underline mr-4`}
               target="_blank"
               rel="noopener noreferrer"
             >

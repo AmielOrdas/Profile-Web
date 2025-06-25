@@ -57,6 +57,10 @@ const EZCodeCardsData = [
     iconBg: "bg-purpleCustom",
     links: [
       { link: "https://ezcode-code-editor.vercel.app/", linkDescription: "View Project" },
+      {
+        link: "https://github.com/AmielOrdas/code-editor",
+        linkDescription: "View GitHub Repository",
+      },
     ],
     icons: [
       { icon: <FaReact />, url: "https://react.dev/" },
@@ -119,6 +123,10 @@ const ProfileWebAppCardsData = [
       {
         link: "https://amiel-mir-ordas-amo-profile.vercel.app/",
         linkDescription: "View Project",
+      },
+      {
+        link: "https://github.com/AmielOrdas/Profile-Web",
+        linkDescription: "View GitHub Repository",
       },
     ],
     icons: [
