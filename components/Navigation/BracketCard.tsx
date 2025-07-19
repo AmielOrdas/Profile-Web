@@ -57,7 +57,7 @@ export default function BracketCard() {
       {/* Conditionally render the content after animation */}
       {LineCircleAnimationDone && (
         <motion.div
-          className="flex items-center justify-center min-h-screen"
+          className="flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{

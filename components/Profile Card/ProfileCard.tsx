@@ -44,9 +44,8 @@ export function ProfileCard() {
           Amiel Mir O. Ordas
         </h2>
         <p className="text-gray-600 text-xs mt-2  tracking-wide  ">
-          I&apos;m Amiel, a recent graduate in computer engineering working towards
-          becoming a software engineer. I love learning, programming, mathematics, and
-          solving real problems.
+          I&apos;m Amiel, a computer engineering graduate currently working as a software
+          engineer. I love learning, programming, mathematics, and solving real problems.
         </p>
       </div>
 
